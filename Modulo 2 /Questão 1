@@ -1,0 +1,15 @@
+//1 - Crie um algoritmo que gere 6 dezenas da mega sena;
+<?php
+$dezenas = array();
+while (count($dezenas) < 6) {
+    $dezena = rand(1, 60);
+    if (!in_array($dezena, $dezenas)) {
+        $dezenas[] = $dezena;
+    }
+}
+sort($dezenas);
+echo "As 6 dezenas geradas são: ";
+foreach ($dezenas as $dezena) {
+    echo $dezena . " ";
+}
+?>

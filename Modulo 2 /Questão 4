@@ -1,0 +1,25 @@
+<?php
+
+// Função para verificar se uma palavra é palíndroma
+function ehPalindroma($palavra) {
+    // Remover espaços e tornar todas as letras minúsculas para uma comparação mais precisa
+    $palavra = strtolower(str_replace(' ', '', $palavra));
+
+    // Inverter a palavra
+    $inverso = strrev($palavra);
+
+    // Verificar se a palavra original é igual à sua versão invertida
+    return $palavra === $inverso;
+}
+
+// Exemplo para teste; arara (palídroma), cavalo (nao é)
+echo "Digite uma palavra: ";
+$entrada = readline();
+
+if (ehPalindroma($entrada)) {
+    echo "{$entrada} é uma palavra palíndroma.\n";
+} else {
+    echo "{$entrada} não é uma palavra palíndroma.\n";
+}
+
+?>

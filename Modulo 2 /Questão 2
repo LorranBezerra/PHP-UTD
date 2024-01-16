@@ -1,0 +1,41 @@
+<?php
+//2Crie um algoritmo que leia um array 5 posições e nesse array ele mostre o maior elemento e o menor.(Não use funções de array)
+// Função para encontrar o maior elemento no array
+function encontrarMaior($arr) {
+    $maior = $arr[0];
+    foreach ($arr as $elemento) {
+        if ($elemento > $maior) {
+            $maior = $elemento;
+        }
+    }
+    return $maior;
+}
+
+// Função para encontrar o menor elemento no array
+function encontrarMenor($arr) {
+    $menor = $arr[0];
+    foreach ($arr as $elemento) {
+        if ($elemento < $menor) {
+            $menor = $elemento;
+        }
+    }
+    return $menor;
+}
+
+// Leitura do array
+$array = array();
+
+for ($i = 0; $i < 5; $i++) {
+    echo "Digite o elemento {$i}: ";
+    $elemento = (int) readline();
+    $array[] = $elemento;
+}
+
+// Encontrar e exibir o maior e o menor elemento
+$maior = encontrarMaior($array);
+$menor = encontrarMenor($array);
+
+echo "O maior elemento é: {$maior}\n";
+echo "O menor elemento é: {$menor}\n";
+
+?>

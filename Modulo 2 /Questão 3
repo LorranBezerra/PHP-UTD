@@ -1,0 +1,35 @@
+//Implemente um algoritmo que ordene um array de 10 posições. (Não use funções de array);
+<?php
+function bubble_sort(&$arr) {
+    $n = count($arr);
+    for($i = 0; $i < $n; $i++) {
+        for($j = 0; $j < $n - $i - 1; $j++) {
+            if($arr[$j] > $arr[$j + 1]) {
+                $temp = $arr[$j];
+                $arr[$j] = $arr[$j + 1];
+                $arr[$j + 1] = $temp;
+            }
+        }
+    }
+}
+
+// Crie um array vazio
+$arr = array();
+
+// Peça ao usuário para inserir 10 valores
+echo "Insira 10 valores:\n";
+for($i = 0; $i < 10; $i++) {
+    $arr[$i] = readline("Valor " . ($i + 1) . ": ");
+}
+
+// Ordene o array
+bubble_sort($arr);
+
+// Imprima o array ordenado
+echo "Array ordenado: ";
+for($i = 0; $i < count($arr); $i++) {
+    echo $arr[$i] . " ";
+}
+
+
+?>
